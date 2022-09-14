@@ -1,14 +1,14 @@
+# 왜 안되나
 def solution(s):
-    word_list = s.split()
-    ans_word_list = []
+    temp = s.split()
+    ans = []
+    for i in temp:
+        ans.append(jadenWord(i))
+    answer = ''
+    for i in ans:
+        answer += i
+        answer += ' '
+    return answer[:-1]
 
-    for i in word_list:
-        if len(i) > 1:
-            ans_word_list.append(i[0].upper() + i[1:].lower())
-        elif len(i) == 1:
-            ans_word_list.append(i[0].upper())
-        elif i == ' ':
-            pass
-
-
-    return ' '.join(ans_word_list)
+def jadenWord(s):
+    return s[0].upper() + s[1:].lower()
