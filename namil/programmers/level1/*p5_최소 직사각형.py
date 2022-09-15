@@ -1,3 +1,4 @@
+# 통과
 def solution(sizes):
     for i in sizes:
         w = i[0]
@@ -5,7 +6,6 @@ def solution(sizes):
         if i[0] < i[1]:
             i[0] = h
             i[1] = w
-    print(sizes)
     w_max = 0
     h_max = 0
     for i in sizes:
