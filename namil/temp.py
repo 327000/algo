@@ -1,26 +1,30 @@
-def solution(cacheSize, cities:list):
-    if cacheSize == 0:
-        return len(cities) * 5
+def solution(str1, str2):
+    str1.upper()
+    str2.upper()
+    str1_list = []
+    str2_list = []
 
-    cache_list = []
-    answer = 0
-    lll = []
-
-    for i in cities:
-        lll.append(i.upper())
-
-    while lll:
-        temp = lll.pop(0)
-        if temp in cache_list:
-            cache_list.remove(temp)
-            cache_list.append(temp)
-            answer += 1
-        elif len(cache_list) < cacheSize:
-            cache_list.append(temp)
-            answer += 5
+    for i in range(len(str1) - 1):
+        if str1[i].isalnum() == False or str1[i+1].isalnum() == False:
+            pass
         else:
-            answer += 5
-            cache_list.pop(0)
-            cache_list.append(temp)
+            str1_list.append(str1[i].upper() + str1[i+1].upper())
 
-    return answer
+    for i in range(len(str2) - 1):
+        if str2[i].isalnum() == False or str2[i+1].isalnum() == False:
+            pass
+        else:
+            str2_list.append(str2[i].upper() + str2[i+1].upper())
+
+    str1_set = set(str1_list)
+    str2_set = set(str2_list)
+    print(str1_set)
+    print(str2_set)
+    if len(str1_set | str2_set) == 0:
+        answer = 1
+    else:
+        answer = len(str1_set & str2_set)/len(str1_set | str2_set)
+
+    return answer * 65536
+
+print(solution('aa1+aa2', 'AAAA12'))
