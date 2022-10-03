@@ -1,3 +1,5 @@
+# n진수 게임
+# https://school.programmers.co.kr/learn/courses/30/lessons/17687?language=python3
 def solution(n, t, m, p):
     game = ''
     numb_now = 0
@@ -37,5 +39,3 @@ def moreThanTen(x:int):
         return 'F'
     else:
         return str(x)
-
-print(solution(16, 16, 2, 2))
